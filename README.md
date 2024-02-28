@@ -25,4 +25,4 @@ Although it is possible to install each component separately (manual embedded li
 
 **Yocto Project** also provides tools and resources for building custom Linux-based systems for embedded devices. It aims to streamline the development process and ensure consistency across a wide range of embedded platforms. Yocto provides a layering structure that makes it easier to scale and enables better organization and management of project configurations, dependencies, and customizations. Layers can be added or removed to tailor the build to specific project needs. However, it makes the devlepment process more complex.
 
-In this repository, you will find step-by-step instructions on how to configure and bring up linux on embedded devices using buildroot and develop applications on your device. We use ZedBoard as an example, but you can test and evaluate the instructions and examples on your own board.
+In this repository, you will find step-by-step instructions on how to configure and bring up linux on embedded devices using buildroot and develop applications on your device. We use ZedBoard as an example, but you can test and evaluate the instructions on your own board.
