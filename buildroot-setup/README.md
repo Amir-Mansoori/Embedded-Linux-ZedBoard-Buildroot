@@ -1,8 +1,13 @@
-The first step is to setup Buildroot. you can follow the instructions in [Buildroot website](https://buildroot.org/) and clone the repository:
+# Embedded Linux on ZedBoard
+## Buildroot setup
+The first step is to setup Buildroot. you can follow the instructions in [Buildroot website](https://buildroot.org/) and check the [system requirements](https://buildroot.org/downloads/manual/manual.html#requirement). After installing the required packages, clone the repository:
 
 `git clone https://gitlab.com/buildroot.org/buildroot.git`
 
-Once you cloned the repository, you will have all the contents in the _buildroot_ directory. Go to the configs directory to see a list of default configurations for a set of hardware architectures:
+Once you cloned the repository, you will have all the contents in the _buildroot_ directory. 
+
+## ZedBoard default configurations
+Go to the configs directory to see a list of default configurations for a set of hardware architectures:
 
 `ls buildroot/configs/`
 
@@ -19,3 +24,20 @@ This will create a .config file in your buildroot directory that contains the de
 This command reads the generated .config file for the ZedBoard and opens a graphical interface where you can customize the build configurations for your embedded linux application. The graphical interface is something like this:
 
 ![Buildroot Graphical Interface](https://github.com/Amir-Mansoori/Embedded-Linux-ZedBoard-Buildroot/blob/main/Images/Buildroot-GUI.png)
+
+Feel free to look through all the options. We can add new packages and libraries and customize our build system in this part. For now, we don't change the configurations because we just want to bring up linux on our embedded device. Later we will see how to configure our build system for our application.
+
+The final step is to build our embedded linux system. This is done by a simple make command, but it takes about 1-2 hours depending on the hardware to complete the buid:
+
+`make`
+
+After this, all the necessary components of the embedded linux system including the kernel image, bootloader and root file system will be generated and stored in `output/images/` directory. There is a single file named _sdcard.img_ that contains the complete image of the filesystem and bootloader that can be written to an SD card for booting an embedded system. _sdcard.img_ is a single image that combines all the necessary components for the embedded linux.
+
+After generation of the build images, you can write the _sdcard.img_ image to an SD card using **dd** tool in Linux or [**Win32DiskImager**](https://sourceforge.net/projects/win32diskimager/) on Windows. 
+Your SD card is now ready to be used to bring up Linux on your embedded device.
+
+# Bring-up Linux on ZedBoard ARM processor
+
+Insert the SD card to your evaluation board \(ex. ZedBoard\) and adjust your hardware configurations to allow the board to boot from the SD card. In ZedBoard, you need to switch ON the two jumpers \(MIO4 and MIO5\). Connect the ZedBoard USB programmer to your computer and also connect the UART in your device to be able to see the boot messages in a terminal.
+
+Open a Putty terminal to open a serial connection. After the proper configuration \(baud rate and the correct COM port\), turn on the power on your ZedBoard and check the serial terminal. You should see the boot messages and then a login prompt will appear asking you to enter the login information. Type `root` as the user and there is no password. This will let you enter the embedded Linux root file system in the userspace.
