@@ -18,3 +18,4 @@ This will create a .config file in your buildroot directory that contains the de
 
 This command reads the generated .config file for the ZedBoard and opens a graphical interface where you can customize the build configurations for your embedded linux application. The graphical interface is something like this:
 
+![Buildroot Graphical Interface](https://github.com/Amir-Mansoori/Embedded-Linux-ZedBoard-Buildroot/blob/main/Images/Buildroot-GUI.png)
