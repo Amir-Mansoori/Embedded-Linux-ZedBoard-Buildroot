@@ -38,7 +38,7 @@ Your SD card is now ready to be used to bring up Linux on your embedded device.
 
 # Bring-up Linux on ZedBoard ARM processor
 
-Insert the SD card to your evaluation board \(ex. ZedBoard\) and adjust your hardware configurations to allow the board to boot from the SD card. In ZedBoard, you need to switch ON the two jumpers \(MIO4 and MIO5\). Connect the ZedBoard USB programmer to your computer and also connect the UART in your device to be able to see the boot messages in a terminal.
+Insert the SD card to your evaluation board \(ex. ZedBoard\) and adjust your hardware configurations to allow the board to boot from the SD card. In ZedBoard, you need to switch ON the two jumpers \(MIO4 and MIO5\). Connect the UART in your device to be able to see the boot messages in a terminal.
 
 Open a Putty terminal to open a serial connection. After the proper configuration \(baud rate and the correct COM port\), turn on the power on your ZedBoard and check the serial terminal. You should see the boot messages and then a login prompt will appear asking you to enter the login information. Type `root` as the user and there is no password. This will let you enter the embedded Linux root file system in the userspace. You will see the following terminal after the boot:
 
