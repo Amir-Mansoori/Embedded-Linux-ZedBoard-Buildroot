@@ -15,3 +15,4 @@ These are the steps to run the first Hello World example on your Zedboard:
 3. In the Buildroot directory, run `make` to rebuild the kernel image files
 4. Copy the generated sdcard.img to the SD card and boot the Zedboard from SD (see [linux-bring-up](https://github.com/Amir-Mansoori/Embedded-Linux-ZedBoard-Buildroot/tree/main/0-linux-bring-up#embedded-linux-on-zedboard)).
   
+After booting, run `hello` executable from the command line to run your hello-world application. you can see that hello world is printed on the terminal.
