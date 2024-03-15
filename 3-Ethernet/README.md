@@ -10,7 +10,7 @@ To use SSH connection, we need to enable the **dropbear** package:
 
   `make menuconfig -> Target packages ----> Networking applications ----> dropbear`
 
-  Make sure that the ethernet node is available in the device tree source (buildroot/output/build/arch/arm/boot/dts/zynq-7000.dtsi, zynq-zed.dts.
+  Make sure that the ethernet node is available in the device tree source (buildroot/output/build/arch/arm/boot/dts/zynq-7000.dtsi, zynq-zed.dts).
 
   Run 'make' in the buildroot directory and boot the zedboard from SD card.
 
