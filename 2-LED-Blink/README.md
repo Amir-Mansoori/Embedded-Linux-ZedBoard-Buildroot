@@ -22,7 +22,7 @@ The DTS files are available in this directory: `buildroot/output/build/linux-cus
 There are two files that are related to our ZedBoard: `zynq-7000.dtsi` and `zynq-zed.dts`.
 The dtsi (dts include) file is the source file that is _included_ in the dts file. The nodes are usually defined in dtsi file and additional features can be added in the dts file.
 For the default configurations of the ZedBoard, the GPIO node is already enabled in the device tree source files. This can be verified by checking the `/dev/` directory after booting.
-A device file must be created in this directory (/dev/) that is related to the GPIO controller and the name of this file is usually gpiochip0 (if there is no other gpio controllers).
+A device file must be created in this directory (/dev/) that is related to the GPIO controller and the name of this file is usually gpiochip0 (if there is no other gpio controllers). Note that for the LED that is connected to PS in the ZedBoard, the GPIO line offset is 7 because it is connected to MIO7.
 
 The final step is to cross-compile our C code (led_blink.c) by using the Makefile that is provided. Follow the same steps that are explained in the [hello-world section](https://github.com/Amir-Mansoori/Embedded-Linux-ZedBoard-Buildroot/tree/main/1-hello-world#hello-world).
 
