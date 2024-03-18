@@ -27,4 +27,8 @@ If after the booting, the hardware is not properly configured, most probably it 
 ## Replacing Boot image from Buildroot
 The files that were written to the SD card in previous sections (for example in [0-linux-bring-up](https://github.com/Amir-Mansoori/Embedded-Linux-ZedBoard-Buildroot/tree/main/0-linux-bring-up#embedded-linux-on-zedboard)), contains a **boot.bin** file. You must replace this file with the newly created **BOOT.BIN** file from the previous sub-section ([Creating the BOOT image](https://github.com/Amir-Mansoori/Embedded-Linux-ZedBoard-Buildroot/edit/main/4-Bitstream-addition/README.md#creating-the-boot-image)).
 
-After the replacement, insert the SD card in the board.
+After the replacement, insert the SD card in the board. The booting process for Zynq devices will start as indicated in the following image:
+
+<img src="https://github.com/Amir-Mansoori/Embedded-Linux-ZedBoard-Buildroot/blob/main/Images/Bootflow.png" width="700" height="500">
+
+After powering on, you will see that the zynq FSBL will load the bitstream on the FPGA and then the u-boot (SSBL) will load the Linux kernel. You can test the design by turning ON the switch and see the LED status.
