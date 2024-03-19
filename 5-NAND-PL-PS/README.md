@@ -25,5 +25,5 @@ After generating the bitstream in Vivado, The next steps in Buildroot are:
 
 Finally, in Vivado:
 
-7. Create the BOOT image and replace the boot.bin from Buildroot based on section (4-Bitstream-addition)
+7. Create the BOOT image and replace the boot.bin from Buildroot based on section ([4-Bitstream-addition](https://github.com/Amir-Mansoori/Embedded-Linux-ZedBoard-Buildroot/tree/main/4-Bitstream-addition#creating-the-boot-image))
 8. Insert the SD card, login to your linux terminal, and run your application. You will see the NAND gate is implemented using the two switches and the LED.
