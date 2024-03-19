@@ -19,7 +19,11 @@ In this step, we need to create a BOOT.bin file that includes the following:
 
 Go to `Vitis (SDK) ---> Create BOOT Image ---> Zynq and Zynq Ultrascale`
 
-Select the output path and add the 3 above-mentioned files to the Boot image partitions. Then click on Create Image.
+Select the output path and add the 3 above-mentioned files to the Boot image partitions. Note that u-boot.elf is located in this directory:
+
+`buildroot/output/build/uboot-custom/u-boot.elf`
+
+After adding these 3 files, click on Create Image.
 
 ### Important Note 
 If after the booting, the hardware is not properly configured, most probably it is related to the FSBL file. **Try to create an empty project with only a Zynq PS and then use the generated FSBL file from this Zynq-PS-only project**
