@@ -10,9 +10,13 @@ In the PL, we create an AND gate using a VHDL IP. The two inputs of the AND gate
 
 After generating the bitstream in Vivado, The next steps in Buildroot are:
 
-1. Enable Xilinx GPIO drivers in the kernel
-2. Modify the Device Tree Source (DTS) files to add axi_gpio_0 and axi_gpio_1 (because they are connected to PS)
-3. Write the C code application to:
+1. Enable Xilinx GPIO drivers in the kernel:
+   - `make linux-menuconfig ---> Device Drivers ---> GPIO Support ---> Memory mapped GPIO drivers ----> Xilinx GPIO support and Xilinx Zynq GPIO support`
+2. Modify the Device Tree Source (DTS) files to add axi_gpio_0 and axi_gpio_1 (Refer to [Device Tree]() section):
+   - DTS files are located in `buildroot/output/build/linux-custom/arch/arm/boot/dts/`
+   - The names of the DTS files in this directory are: `zynq-7000.dtsi` and `zynq-zed.dts`
+   - Modify these two files according to the provided files in this repository with the same names
+3. Write the C code application (`nand_gate.c`) to:
    - configure the inputs and outputs of AXI GPIO IPs
    - implement the NOT logic
 4. Rebuild the SSBL (u-boot) and Linux Kernel:
