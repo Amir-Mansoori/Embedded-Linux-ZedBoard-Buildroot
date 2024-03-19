@@ -17,7 +17,7 @@ Also make sure that Zynq GPIO driver is enabled:
 
 After saving this configuration, run the `make` command again to rebuild the root file system and all the required images in the output/images directory.
 
-The next step is to make sure that our Device Tree Source (DTS) file includes the zynq GPIO node For more information about Device Trees follow this section.
+The next step is to make sure that our Device Tree Source (DTS) file includes the zynq GPIO node. For more information about [Device Trees]() follow the link.
 The DTS files are available in this directory: `buildroot/output/build/linux-custom/arch/arm/boot/dts/`.
 There are two files that are related to our ZedBoard: `zynq-7000.dtsi` and `zynq-zed.dts`.
 The dtsi (dts include) file is the source file that is _included_ in the dts file. The nodes are usually defined in dtsi file and additional features can be added in the dts file.
